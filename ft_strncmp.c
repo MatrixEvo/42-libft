@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:19:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 02:19:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 02:21:16 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 02:21:16 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (!(((n >= 'a') && (n <= 'z')) || ((n >= 'A') && (n <= 'Z'))
-			|| ((n >= '0') && (n <= '9'))))
+	size_t	count;
+
+	count = 0;
+	if (n == 0)
 		return (0);
-	return (1);
+	while (str1[count] != '\0' && str2[count] != '\0' && count < (n - 1))
+	{
+		if (str1[count] != str2[count])
+			break ;
+		count++;
+	}
+	return (str1[count] - str2[count]);
 }
 /*
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	c;
-
-	c = 'a';
-	printf("%d\n", ft_isalnum(c));
-	printf("%d", isalnum(c));
+	if (argc <= 1)
+		return (0);
+	printf("%d\n", ft_strncmp(argv[1], argv[2], 3));
+	printf("%d\n", strncmp(argv[1], argv[2], 3));
+	return (0);
 }
 */

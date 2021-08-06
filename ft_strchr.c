@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:19:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 02:19:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 02:20:49 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+char	*ft_strchr(const char *s, int n)
 {
-	if (!(((n >= 'a') && (n <= 'z')) || ((n >= 'A') && (n <= 'Z'))
-			|| ((n >= '0') && (n <= '9'))))
-		return (0);
-	return (1);
+	int	count;
+
+	count = 0;
+	while (s[count] != '\0' && s[count] != n)
+		count++;
+	if (s[count] == n)
+		return ((char *)s + count);
+	return (0);
 }
 /*
 int	main(void)
 {
-	char	c;
+	char	*string;
 
-	c = 'a';
-	printf("%d\n", ft_isalnum(c));
-	printf("%d", isalnum(c));
+	string = "Aapple Pie";
+	printf("%s\n", ft_strchr(string, 'p'));
+	printf("%s", strchr(string, 'p'));
 }
 */

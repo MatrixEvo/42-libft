@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:19:17 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 02:19:20 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 02:20:31 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 02:20:32 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	count;
 
 	count = 0;
+	if (!dest || !src)
+		return (0);
 	while (count < n)
-		((unsigned char *)s)[count++] = '\0';
-	return (s);
+	{
+		((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
+		count++;
+	}
+	return (dest);
 }
 /*
 int	main(void)
 {
-	char	str[10];
-	char	str1[10];
+	char	src[10] = "Apple Pie";
+	char	dest[50] = "abcdefghijklmnopqrstuvwxyz";
+	char	src1[10] = "Apple Pie";
+	char	dest1[50] = "abcdefghijklmnopqrstuvwxyz";
 
-	strcpy(str, "Apple Pie");
-	strcpy(str1, str);
-	ft_bzero(str, 3);
-	bzero(str1, 3);
-	printf("%s\n", str);
-	printf("%s", str1);
+	ft_memcpy(dest, src, sizeof(src));
+	memcpy(dest1, src1, sizeof(src1));
+	printf("%s\n", dest);
+	printf("%s\n", dest1);
 }
 */
