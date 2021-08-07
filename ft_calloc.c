@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 22:30:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 20:47:31 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 20:47:32 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		count;
-	char	c;
+	void	*ptr;
 
-	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
-		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
-	return (0);
+	ptr = malloc(size * count);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count);
+	return (ptr);
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
+	char	*ptr;
 
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'P'));
-	printf("%s", strchr(string, 'P'));
+	ptr = (char *)ft_calloc(5, 5);
+	if (*ptr == '\0')
+		printf("Hello");
 }
 */

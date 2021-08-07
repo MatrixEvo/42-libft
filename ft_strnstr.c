@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 22:30:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 17:47:09 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 17:47:10 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		count;
-	char	c;
+	size_t	count;
+	size_t	count1;
 
 	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
+	if (*little == '\0')
+		return ((char *)big);
+	while (big[count] != '\0' && count < len)
+	{
+		count1 = 0;
+		while (big[count + count1] == little[count1])
+		{
+			count1++;
+			if (!little[count1])
+				return ((char *)&big[count]);
+		}
 		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
+	}
 	return (0);
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
+	char	big[] = "abcdcdz";
+	char	small[] = "z";
 
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'P'));
-	printf("%s", strchr(string, 'P'));
+	printf("%s\n", ft_strnstr(big, small, 99));
+	printf("%s\n", strnstr(big, small, 99));
 }
 */

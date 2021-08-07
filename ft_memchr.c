@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 22:30:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 21:03:30 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 21:03:31 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int		count;
-	char	c;
+	size_t	count;
 
 	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
+	while (count < n && ((char *)str)[count] != c)
 		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
+	if (((char *)str)[count] == c)
+		return ((char *)str + count);
 	return (0);
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
+	char	str[10] = "Apple Pie";
+	char	str1[10] = "Apple Pie";
 
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'P'));
-	printf("%s", strchr(string, 'P'));
+	printf("%s\n", (char *)ft_memchr(str, 'P', 10));
+	printf("%s\n", (char *)memchr(str1, 'P', 10));
 }
 */

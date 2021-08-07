@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 22:30:45 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/07 21:41:39 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/07 21:41:40 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	int		count;
-	char	c;
+	size_t	count;
+	char	*str1buffer;
+	char	*str2buffer;
 
 	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
+	str1buffer = (char *)str1;
+	str2buffer = (char *)str2;
+	while (count < n)
+	{
+		if ((str1buffer[count] != str2buffer[count]))
+			return (str1buffer[count] - str2buffer[count]);
 		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
+	}
 	return (0);
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
+	char	str[10] = "Apple pie";
+	char	str1[10] = "Apple Pie";
 
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'P'));
-	printf("%s", strchr(string, 'P'));
+	printf("%d\n", ft_memcmp(str, str1, 10));
+	printf("%d", memcmp(str, str1, 10));
 }
 */

@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 02:21:38 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/08 02:53:57 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/* Bonus Struct */
-/*
+/* Bonus Struct
 typedef struct	s_list
 {
 	void	*content;
@@ -31,31 +30,29 @@ typedef struct	s_list
 */
 
 /* Part 1 - Libc Functions - 23 */
-/*
-int	ft_isalpha(int n);
-int	ft_isdigit(int n);
-int	ft_isalnum(int n);
-int	ft_isascii(int n);
-int	ft_isprint(int n);
+int		ft_isalpha(int n);
+int		ft_isdigit(int n);
+int		ft_isalnum(int n);
+int		ft_isascii(int n);
+int		ft_isprint(int n);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-memmove
+void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
-int	ft_toupper(int n);
-int	ft_tolower(int n);
+int		ft_toupper(int n);
+int		ft_tolower(int n);
 char	*ft_strchr(const char *s, int n);
 char	*ft_strrchr(const char *s, int n);
-int	ft_strncmp(const char *str1, const char *str2, size_t n);
-memchr
-memcmp
-strnstr
-atoi
-calloc
-strdup
-*/
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+void	*ft_memchr(const void *str, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+int		ft_atoi(const char *ptr);
+void	*ft_calloc(size_t count, size_t size);
+//strdup
 
 /* Part 2 - Additional Functions - 11 */
 /*
