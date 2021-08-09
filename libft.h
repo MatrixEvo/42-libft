@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/08 02:53:57 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/09 15:39:44 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,34 +52,30 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *ptr);
 void	*ft_calloc(size_t count, size_t size);
-//strdup
+char	*ft_strdup(const char *s);
 
 /* Part 2 - Additional Functions - 11 */
-/*
-ft_substr
-ft_strjoin
-ft_strtrim
-ft_split
-ft_itoa
-ft_strmapi
-ft_striteri
-ft_putchar_fd
-ft_putstr_fd
-ft_putendl_fd
-ft_putnbr_fd
-*/
+//ft_substr
+//ft_strjoin
+//ft_strtrim
+//ft_split
+//ft_itoa
+//ft_strmapi
+//ft_striteri
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+//ft_putendl_fd
+void	ft_putnbr_fd(int n, int fd);
 
 /* Bonus Part - 9 */
-/*
-ft_lstnew
-ft_lstadd_front
-ft_lstsize
-ft_lstlast
-ft_lstadd_back
-ft_lstdelone
-ft_lstclear
-ft_lstiter
-ft_lstmap
-*/
+//ft_lstnew
+//ft_lstadd_front
+//ft_lstsize
+//ft_lstlast
+//ft_lstadd_back
+//ft_lstdelone
+//ft_lstclear
+//ft_lstiter
+//ft_lstmap
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/08 15:41:10 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/08 15:41:11 by nkay-hoo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
@@ -12,15 +24,15 @@ char	*ft_strdup(const char *s)
 	rtn = ft_memcpy(rtn, s, len);
 	return (rtn);
 }
-
+/*
 int main(void)
 {
-	char source[] = "GeeksForGeeks\n";
+	char source[] = "Apple Pie\n";
 
-	// A copy of source is created dynamically
-	// and pointer to copy is returned.
-	char* target = strdup(source);
+	char* dest = ft_strdup(source);
+	char* dest1 = strdup(source);
 
-	printf("%s", target);
-	return 0;
+	printf("%s", dest);
+	printf("%s", dest1);
 }
+*/

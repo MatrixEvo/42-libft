@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 20:47:31 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/07 20:47:32 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/09 16:01:26 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	ptr = malloc(size * count);
 	if (!ptr)
-		return (NULL);
+		return (0);
 	ft_bzero(ptr, count);
 	return (ptr);
 }

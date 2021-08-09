@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 15:04:36 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/09 15:36:38 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/09 15:36:38 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		count;
-	char	c;
-
-	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
-		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
-	return (0);
+	if (n == -2147483648)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd('8', fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'p'));
-	printf("%s", strchr(string, 'p'));
+	ft_putnbr_fd(123456789, 1);
 }
 */

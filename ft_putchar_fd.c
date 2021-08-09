@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 02:20:48 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 15:04:36 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/09 15:10:32 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/09 15:16:06 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		count;
-	char	c;
-
-	count = 0;
-	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
-		count++;
-	if (s[count] == c)
-		return ((char *)s + count);
-	return (0);
+	write(fd, &c, 1);
 }
 /*
 int	main(void)
 {
-	char	*string;
-	
-	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'p'));
-	printf("%s", strchr(string, 'p'));
+	ft_putchar_fd('a', 1);
 }
 */
