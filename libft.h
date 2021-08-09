@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 15:39:44 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/09 16:43:17 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_strdup(const char *s);
 //ft_striteri
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-//ft_putendl_fd
+void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /* Bonus Part - 9 */
