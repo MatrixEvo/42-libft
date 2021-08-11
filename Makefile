@@ -6,7 +6,7 @@
 #    By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 02:21:46 by nkay-hoo          #+#    #+#              #
-#    Updated: 2021/08/12 01:13:24 by nkay-hoo         ###   ########.fr        #
+#    Updated: 2021/08/12 03:07:19 by nkay-hoo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUSOBJ)
-	$(AR) $(NAME) $?
+#bonus: $(OBJ) $(BONUSOBJ)
+#	$(AR) $(NAME) $?
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
@@ -39,4 +39,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+.PHONY: all bonus clean fclean re so
