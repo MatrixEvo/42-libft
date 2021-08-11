@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 15:04:54 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 20:33:22 by nkay-hoo         ###   ########.fr       */
+/*   Created: 2021/08/10 16:59:01 by nkay-hoo          #+#    #+#             */
+/*   Updated: 2021/08/12 00:09:20 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	int		count;
+	int		s1len;
+	int		s2len;
 	char	*res;
 
-	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		len = 0;
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	res = malloc(len + 1);
+	count = 0;
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	res = malloc(s1len + s2len + 1);
 	if (!res)
 		return (0);
-	ft_strlcpy(res, s + start, len + 1);
+	while (count != s1len && s1len != '\0')
+		res[count++] = s1[count];
+	while (count != (s1len + s2len) && s2len != '\0')
+		res[count++] = s2[count - s1len];
+	res[count] = '\0';
 	return (res);
 }
 /*
 int	main(void)
 {
-	char src[10] = "Apple Pie";
-
-	printf("%s\n", ft_substr(src, 2, 5));
+	char	*str1 = "Apple Pie";
+	char	*str2 = " is good";
+	char	*str = ft_strjoin(str1, str2);
+	printf("%s\n", str);
 }
 */

@@ -19,19 +19,20 @@ char	*ft_strchr(const char *s, int n)
 
 	count = 0;
 	c = (char)n;
-	while (s[count] != '\0' && s[count] != c)
+	while (s[count] != c && s[count] != '\0')
 		count++;
 	if (s[count] == c)
 		return ((char *)s + count);
 	return (0);
 }
+
 /*
 int	main(void)
 {
 	char	*string;
 	
 	string = "Aapple Pie";
-	printf("%s\n", ft_strchr(string, 'p'));
-	printf("%s", strchr(string, 'p'));
+	printf("%s\n", ft_strchr(string, 'a'));
+	printf("%s\n", strchr(string, 'a'));
 }
 */

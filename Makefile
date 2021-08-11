@@ -6,19 +6,36 @@
 #    By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 02:21:46 by nkay-hoo          #+#    #+#              #
-#    Updated: 2021/08/08 00:13:53 by nkay-hoo         ###   ########.fr        #
+#    Updated: 2021/08/12 00:43:38 by nkay-hoo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-all : $(NAME)
+NAME = libft.a
+OBJ = $(SRC:%.c=%.o)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
+SRC = $(filter-out $(BSOURCES), $(wildcard ft_*.c))
+BONUSSRC = $(wildcard ft_*lst*.c)
+BONUSOBJ = $(BONUSSRC:%.c=%.o)
 
-$(NAME) :
-	gcc -Wall -Wextra -Werror
+all: $(NAME)
 
-clean :
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-fclean :
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
-re :
+clean:
+	$(RM) $(OBJ) $(BONUSOBJ)
 
-.PHONY : all clean fclean re
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+bonus: $(BONUSOBJ)
+	ar rcs $(NAME) $(BONUSOBJ)
+
+.PHONY: all $(NAME) %.o clean fclean re bonus

@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 16:43:17 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 00:43:08 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_isascii(int n);
 int		ft_isprint(int n);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *s, int c, size_t n);
-void	*ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
@@ -55,9 +55,9 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
 
 /* Part 2 - Additional Functions - 11 */
-//ft_substr
-//ft_strjoin
-//ft_strtrim
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+//char	*ft_strtrim(char const *s1, char const *set);
 //ft_split
 //ft_itoa
 //ft_strmapi
