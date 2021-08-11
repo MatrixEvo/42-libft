@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 21:41:39 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/12 01:59:02 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 03:41:04 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	size_t	count;
+	size_t			count;
 	unsigned char	*str1buffer;
 	unsigned char	*str2buffer;
 

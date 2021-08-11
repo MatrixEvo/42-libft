@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 16:59:01 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/12 00:45:35 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 03:39:41 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 
 	count = 0;
+	if (!s1 || !s2)
+		return (0);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	res = malloc(s1len + s2len + 1);
