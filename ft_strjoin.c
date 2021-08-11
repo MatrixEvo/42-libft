@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 16:59:01 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/12 00:09:20 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 00:45:35 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!res)
 		return (0);
 	while (count != s1len && s1len != '\0')
-		res[count++] = s1[count];
+	{
+		res[count] = s1[count];
+		count++;
+	}
 	while (count != (s1len + s2len) && s2len != '\0')
-		res[count++] = s2[count - s1len];
+	{
+		res[count] = s2[count - s1len];
+		count++;
+	}
 	res[count] = '\0';
 	return (res);
 }

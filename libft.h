@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/12 00:43:08 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 01:20:52 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/* Bonus Struct
-typedef struct	s_list
-{
-	void	*content;
-	struct	s_list	*next;
-}	t_list;
-*/
+/* Bonus Struct */
+//typedef struct	s_list
+//{
+//	void	*content;
+//	struct	s_list	*next;
+//}	t_list;
 
 /* Part 1 - Libc Functions - 23 */
 int		ft_isalpha(int n);

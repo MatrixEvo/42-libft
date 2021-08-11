@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:07 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/09 21:20:43 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/12 02:34:47 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	count;
 
 	count = 0;
-	while (str[count] != '\0')
+	while (str[count])
 		count++;
 	return (count);
 }
