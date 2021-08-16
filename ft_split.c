@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 18:57:27 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/15 18:57:28 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/16 16:15:19 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	ft_setstr(char const *s, char c, int count, char **str)
 		ft_strlcpy(str[count2++], s + count1, len + 1);
 		count1 += len + 1;
 	}
-	str[count2] = '\0';
+	str[count2] = 0;
 }
 
 char	**ft_split(char const *s, char c)
