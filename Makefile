@@ -6,7 +6,7 @@
 #    By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 02:21:46 by nkay-hoo          #+#    #+#              #
-#    Updated: 2021/08/12 03:07:19 by nkay-hoo         ###   ########.fr        #
+#    Updated: 2021/08/15 19:19:35 by nkay-hoo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-#bonus: $(OBJ) $(BONUSOBJ)
-#	$(AR) $(NAME) $?
+bonus: $(OBJ) $(BONUSOBJ)
+	$(AR) $(NAME) $?
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@

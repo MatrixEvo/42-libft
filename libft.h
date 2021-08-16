@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/15 19:03:47 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/08/15 19:26:15 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 # include <unistd.h>
 
 /* Bonus Struct */
-//typedef struct	s_list
-//{
-//	void	*content;
-//	struct	s_list	*next;
-//}	t_list;
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /* Part 1 - Libc Functions - 23 */
 int		ft_isalpha(int n);
@@ -67,14 +67,14 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /* Bonus Part - 9 */
-//t_list	*ft_lstnew(void *content);
-//void	ft_lstadd_front(t_list **lst, t_list *new);
-//int		ft_lstsize(t_list *lst);
-//t_list	*ft_lstlast(t_list *lst);
-//void	ft_lstadd_back(t_list **lst, t_list *new);
-//void	ft_lstdelone(t_list *lst, void (*del)(void *));
-//void	ft_lstclear(t_list **lst, void (*del)(void *));
-//void	ft_lstiter(t_list *lst, void (*f)(void *));
-//t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
