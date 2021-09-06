@@ -6,7 +6,7 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 02:21:37 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/15 19:26:15 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/09/06 19:50:02 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <string.h>
 # include <strings.h>
 # include <ctype.h>
-//# include <bsd/string.h>
 # include <stdlib.h>
 # include <unistd.h>
 

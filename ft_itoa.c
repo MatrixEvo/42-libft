@@ -6,13 +6,13 @@
 /*   By: nkay-hoo <nkay-hoo@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:31:01 by nkay-hoo          #+#    #+#             */
-/*   Updated: 2021/08/15 18:58:57 by nkay-hoo         ###   ########.fr       */
+/*   Updated: 2021/09/06 19:48:45 by nkay-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_numlen(int	n)
+static int	ft_numlen(int n)
 {
 	int	len;
 
